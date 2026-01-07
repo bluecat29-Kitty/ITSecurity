@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersécurité et le facteur humain</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+        }
+        
+        .page {
+            page-break-after: always;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page:last-child {
+            page-break-after: auto;
+        }
+        
+        h1 {
+            color: #1a5490;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #1a5490;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #2c5f8d;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #1a5490;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .intro {
+            background: #f0f4f8;
+            padding: 20px;
+            border-left: 4px solid #1a5490;
+            margin: 25px 0;
+        }
+        
+        .author {
+            text-align: right;
+            font-style: italic;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .grid-item {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #1a5490;
+        }
+        
+        .grid-item h3 {
+            margin-top: 0;
+            color: #1a5490;
+        }
+        
+        .highlight-box {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #1a5490;
+        }
+        
+        .stats {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        
+        .case-study {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .table {
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            border-bottom: 1px solid #ddd;
+            padding: 12px 0;
+        }
+        
+        .table-row:first-child {
+            font-weight: bold;
+            background: #f0f4f8;
+            padding: 15px 10px;
+        }
+        
+        .table-label {
+            font-weight: bold;
+            color: #1a5490;
+        }
+        
+        .defense-layers {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .layer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .layer h3 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .timeline {
+            margin: 25px 0;
+        }
+        
+        .timeline-item {
+            border-left: 3px solid #1a5490;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: #1a5490;
+        }
+        
+        .timeline-item h3 {
+            margin-top: 0;
+        }
+        
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <h1>Cybersécurité et le facteur humain</h1>
+    
+    <div class="intro">
+        <p>Dans le monde numérisé d'aujourd'hui, le facteur humain représente à la fois la plus grande force et la plus grande faiblesse en matière de cybersécurité. Malgré des mesures de sécurité techniques les plus avancées, l'être humain reste souvent le maillon le plus faible de la chaîne de sécurité.</p>
+        
+        <p>Cette présentation éclaire les aspects multiples du facteur humain dans la sécurité informatique, analyse les vecteurs d'attaque typiques et présente des approches de solutions pratiques qui répondent à la fois aux exigences du RGPD et renforcent la sécurité dans le contexte de l'entreprise.</p>
+        
+        <p>Nous examinons des exemples concrets de l'industrie et de la vie quotidienne qui illustrent à quel point le comportement humain est déterminant pour la protection des données à caractère personnel.</p>
+    </div>
+    
+    <p class="author">par Antonios Karkalis</p>
+</div>
+
+<div class="page">
+    <h1>Social Engineering : L'art de la manipulation</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Phishing</h3>
+            <p>E-mails de masse avec des adresses d'expéditeur falsifiées qui incitent les utilisateurs à divulguer des données sensibles</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Spear-Phishing</h3>
+            <p>Attaques ciblées sur des personnes spécifiques avec des contenus sur mesure</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Vishing</h3>
+            <p>Fraude téléphonique par usurpation de fausses identités (p. ex. technicien, employé de banque)</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Baiting</h3>
+            <p>Placement de supports de données infectés qui installent des logiciels malveillants lors de leur utilisation</p>
+        </div>
+    </div>
+    
+    <p>Le Social Engineering exploite des caractéristiques humaines telles que la serviabilité, l'obéissance à l'autorité et la vulnérabilité au stress. Les attaquants manipulent les employés pour obtenir des identifiants ou des informations confidentielles, sans avoir à surmonter de mesures de sécurité techniques.</p>
+    
+    <div class="stats">
+        <p>Selon des études actuelles, plus de 90% de toutes les cyberattaques réussies commencent par une forme de Social Engineering. Les coûts pour les entreprises dus à de telles attaques s'élèvent en Allemagne à plusieurs milliards d'euros par an.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Sécurité des mots de passe et authentification</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Mots de passe faibles</h3>
+            <p>Mots de passe faciles à deviner ou réutilisés</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Mots de passe forts</h3>
+            <p>Séquences de caractères complexes et uniques d'au moins 12 caractères</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Authentification à plusieurs niveaux</h3>
+            <p>Combinaison de connaissance, de possession et de facteurs biométriques</p>
+        </div>
+    </div>
+    
+    <div class="intro">
+        <p>Le RGPD exige des mesures techniques appropriées pour protéger les données à caractère personnel, ce qui inclut également des procédures d'authentification sécurisées. Dans la pratique, il s'avère toutefois que de nombreux utilisateurs réutilisent leurs mots de passe ou les choisissent trop simples.</p>
+        
+        <p>Les gestionnaires de mots de passe et les procédures biométriques offrent ici des solutions praticables. L'authentification à deux facteurs en particulier s'est établie comme une mesure efficace, réalisable tant pour les entreprises que pour les particuliers et qui augmente considérablement la sécurité, sans restreindre fortement la convivialité.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Formations de sensibilisation et leur efficacité</h1>
+    
+    <div class="defense-layers">
+        <div class="layer">
+            <h3>Créer la conscience</h3>
+            <p>Sensibilisation aux menaces actuelles et méthodes d'attaque</p>
+        </div>
+        
+        <div class="layer">
+            <h3>Exercices pratiques</h3>
+            <p>Attaques de phishing simulées et scénarios d'action</p>
+        </div>
+        
+        <div class="layer">
+            <h3>Évaluation</h3>
+            <p>Mesure de l'efficacité et adaptation de la formation</p>
+        </div>
+        
+        <div class="layer">
+            <h3>Formation continue</h3>
+            <p>Mises à jour régulières sur les nouvelles menaces</p>
+        </div>
+    </div>
+    
+    <p>Les programmes efficaces de sensibilisation à la sécurité combinent des connaissances théoriques avec des exercices pratiques et sont continuellement adaptés aux nouveaux scénarios de menaces. Les entreprises qui effectuent des formations régulières enregistrent une réduction significante des attaques de phishing réussies jusqu'à 70%.</p>
+    
+    <div class="highlight-box">
+        <p>Particulièrement efficaces sont les campagnes de phishing simulées, lors desquelles des e-mails de test inoffensifs sont envoyés aux employés. Cette méthode aide à identifier les faiblesses et à les traiter de manière ciblée. Le RGPD exige en outre explicitement la formation des employés dans le traitement des données à caractère personnel, l'accent étant mis sur la confidentialité et l'intégrité.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Menaces internes et gestion des accès</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Surveillance continue</h3>
+            <p>Détection de modèles d'activité inhabituels</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Catégorisation des données</h3>
+            <p>Classification selon la sensibilité et les droits d'accès</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Principe du moindre privilège</h3>
+            <p>Droits d'accès minimaux nécessaires pour chaque utilisateur</p>
+        </div>
+    </div>
+    
+    <p>Les menaces internes représentent un défi particulier, car elles proviennent de personnes qui ont déjà un accès légitime aux systèmes. Environ 60% de toutes les violations de la protection des données sont causées par des employés – que ce soit intentionnellement ou par négligence.</p>
+    
+    <div class="intro">
+        <p>La mise en œuvre du principe du moindre privilège, dans lequel les employés ne reçoivent que les droits d'accès absolument nécessaires pour leurs tâches, est une exigence centrale du RGPD. Dans la pratique, de nombreuses entreprises utilisent en outre des solutions techniques telles que Data Loss Prevention (DLP) et User and Entity Behavior Analytics (UEBA) pour détecter précocement les activités suspectes.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Obligations de notification et réponse aux incidents</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Règle des 72 heures</h3>
+            <p>Le RGPD oblige à la notification des violations de la protection des données à l'autorité de contrôle dans les 72 heures suivant la connaissance de l'incident.</p>
+            <p>Les notifications tardives peuvent entraîner des amendes accrues.</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Obligation de documentation</h3>
+            <p>Tous les incidents doivent être documentés de manière exhaustive, y compris le type de violation, les personnes concernées et les mesures prises.</p>
+            <p>Cette documentation sert de preuve de conformité.</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Notification des personnes concernées</h3>
+            <p>En cas de risque élevé pour les droits et libertés des personnes physiques, les personnes concernées doivent également être informées sans délai.</p>
+            <p>La notification doit être faite dans un langage clair et simple.</p>
+        </div>
+    </div>
+    
+    <p>Un plan efficace de réponse aux incidents prend en compte les aspects techniques et juridiques. Il définit des responsabilités et des voies de communication claires pour pouvoir réagir rapidement et de manière appropriée en cas d'urgence. Des exercices et simulations réguliers aident à optimiser les processus.</p>
+    
+    <div class="stats">
+        <p>Dans la pratique, de nombreuses entreprises échouent à la notification dans les délais, car elles détectent les incidents trop tard ou évaluent mal leur portée. Des études montrent que le temps de détection moyen pour les violations de la protection des données en Allemagne est de 197 jours – bien au-delà du délai de 72 heures du RGPD.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Cybersécurité dans les systèmes industriels</h1>
+    
+    <div class="intro">
+        <p>L'interconnexion et la numérisation croissantes des systèmes industriels ont inauguré une nouvelle ère de productivité, mais ont également créé des défis de sécurité considérables. Cette présentation éclaire les aspects critiques de la cybersécurité dans les environnements industriels en tenant particulièrement compte des exigences du RGPD.</p>
+        
+        <p>Nous examinerons à la fois les scénarios de menaces techniques et les mesures de protection ainsi que les cadres juridiques pour le traitement des données à caractère personnel dans l'environnement industriel. Ce faisant, nous montrons des exemples concrets de la pratique et expliquons comment un équilibre entre sécurité, protection des données et efficacité opérationnelle peut être atteint.</p>
+    </div>
+    
+    <p class="author">par Antonios Karkalis</p>
+</div>
+
+<div class="page">
+    <h1>Fondamentaux : Industrial Control Systems (ICS)</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Systèmes SCADA</h3>
+            <p>Supervisory Control and Data Acquisition - Systèmes de surveillance pour installations industrielles étendues avec traitement de données en temps réel</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Automates programmables (SPS/PLC)</h3>
+            <p>Ordinateurs industriels pour le contrôle de processus de fabrication avec haute fiabilité et capacité en temps réel</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Protocoles de communication industriels</h3>
+            <p>Protocoles spéciaux tels que Modbus, PROFINET ou OPC UA pour la mise en réseau de composants industriels</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Convergence IT/OT</h3>
+            <p>Interconnexion croissante de l'IT traditionnelle avec la technologie opérationnelle (OT) dans les environnements industriels</p>
+        </div>
+    </div>
+    
+    <p>Ces systèmes ont été initialement conçus pour des environnements isolés, dans lesquels la sécurité était garantie par la séparation physique. Avec l'interconnexion croissante, de nouveaux vecteurs d'attaque émergent, qui nécessitent des concepts de protection spécifiques.</p>
+</div>
+
+<div class="page">
+    <h1>Paysage des menaces pour les systèmes industriels</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Attaques ciblées</h3>
+            <p>Advanced Persistent Threats (APTs) spécialement développés pour les systèmes industriels (p. ex. Stuxnet, Triton, BlackEnergy). Ces attaques peuvent rester non détectées pendant des mois et causer des dommages physiques graves.</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Attaques par rançongiciel</h3>
+            <p>Chiffrement de données de production critiques avec extorsion, comme avec NotPetya et WannaCry. Les arrêts de production peuvent causer des millions de dommages.</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Menaces internes</h3>
+            <p>Sabotage ciblé ou erreurs involontaires par des employés avec accès au système. Particulièrement dans les environnements industriels, de petites erreurs peuvent avoir de grandes conséquences.</p>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <p>Le paysage des menaces pour les systèmes industriels s'étend constamment, même des acteurs étatiques apparaissant de plus en plus comme des attaquants potentiels. La combinaison d'une exigence de disponibilité élevée et d'une technologie souvent obsolète fait des systèmes industriels des cibles particulièrement attractives.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Études de cas : Incidents de sécurité dans l'industrie</h1>
+    
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Stuxnet (2010)</h3>
+            <p>Ver informatique hautement développé qui a saboté des installations d'enrichissement d'uranium iraniennes. Première cyberarme documentée qui a causé des dommages physiques.</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Aciérie allemande (2014)</h3>
+            <p>Attaque sur un haut-fourneau avec dommages physiques par spear-phishing ciblé et prise de contrôle des systèmes de commande.</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Attaque TRITON (2017)</h3>
+            <p>Manipulation de systèmes de sécurité dans des installations pétrochimiques au Moyen-Orient, qui visait des systèmes d'urgence critiques.</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Station d'épuration en Floride (2021)</h3>
+            <p>Des pirates ont brièvement augmenté la concentration d'hydroxyde de sodium dans l'eau potable par accès au système SCADA.</p>
+        </div>
+    </div>
+    
+    <p>Ces incidents illustrent que les cyberattaques sur les systèmes industriels ne sont pas seulement des scénarios théoriques, mais des menaces réelles avec des conséquences potentiellement catastrophiques pour la vie humaine et les infrastructures.</p>
+</div>
+
+<div class="page">
+    <h1>Architecture de sécurité : Defense-in-Depth</h1>
+    
+    <div class="defense-layers">
+        <div class="layer">
+            <h3>1. Sécurité physique</h3>
+            <p>Contrôle d'accès aux installations critiques</p>
+            <ul>
+                <li>Authentification biométrique</li>
+                <li>Vidéosurveillance</li>
+            </ul>
+        </div>
+        
+        <div class="layer">
+            <h3>2. Segmentation réseau</h3>
+            <p>Isolation des systèmes critiques</p>
+            <ul>
+                <li>Zones démilitarisées (DMZ)</li>
+                <li>Passerelles unidirectionnelles</li>
+            </ul>
+        </div>
+        
+        <div class="layer">
+            <h3>3. Contrôle d'accès</h3>
+            <p>Principe du moindre privilège</p>
+            <ul>
+                <li>Droits d'accès basés sur les rôles</li>
+                <li>Authentification multi-facteurs</li>
+            </ul>
+        </div>
+        
+        <div class="layer">
+            <h3>4. Surveillance</h3>
+            <p>Observation continue</p>
+            <ul>
+                <li>Systèmes SIEM</li>
+                <li>Détection d'anomalies</li>
+            </ul>
+        </div>
+    </div>
+    
+    <p>Le concept Defense-in-Depth implémente plusieurs couches de protection, de sorte qu'en cas de compromission d'une couche, d'autres barrières sont présentes. Cette stratégie est particulièrement importante pour les systèmes industriels, car ici des mises à jour de sécurité régulières ne sont souvent pas possibles.</p>
+</div>
+
+<div class="page">
+    <h1>IEC 62443 : Standard pour la cybersécurité industrielle</h1>
+    
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Exigences fondamentales</h3>
+            <p>Développement et exploitation sécurisés</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Analyse des risques</h3>
+            <p>Évaluation des menaces</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Implémentation</h3>
+            <p>Mise en œuvre de contrôles techniques</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Validation & Vérification</h3>
+            <p>Examen des mesures de sécurité</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Certification</h3>
+            <p>Preuve de conformité</p>
+        </div>
+    </div>
+    
+    <div class="intro">
+        <p>L'IEC 62443 constitue le standard international pour la sécurité dans les systèmes d'automatisation et de contrôle industriels. Elle offre un cadre complet pour les fabricants, intégrateurs et exploitants pour la mise en œuvre de mesures de cybersécurité tout au long du cycle de vie des systèmes industriels.</p>
+        
+        <p>Particulièrement importante est l'approche basée sur les risques, qui permet une classification des systèmes selon les niveaux de sécurité (SL1 à SL4) et prescrit des mesures de protection correspondantes. Cette systématique permet une sécurisation économiquement appropriée.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Pertinence du RGPD dans les environnements industriels</h1>
+    
+    <div class="grid">
+        <div class="grid-item">
+            <h3>Données des employés</h3>
+            <p>Protocoles d'accès, données de productivité, données de localisation</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Systèmes d'autorisation</h3>
+            <p>Authentification, droits d'accès, journalisation</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Systèmes de surveillance</h3>
+            <p>Vidéosurveillance, contrôle d'accès, biométrie</p>
+        </div>
+        
+        <div class="grid-item">
+            <h3>Transmission de données</h3>
+            <p>Maintenance à distance, intégration cloud, analyse de données</p>
+        </div>
+    </div>
+    
+    <p>Dans les environnements industriels, diverses données à caractère personnel sont traitées, qui relèvent de la protection du RGPD. Le défi particulier réside dans le fait que nombre de ces traitements de données sont nécessaires pour l'exploitation sûre, mais que les droits des personnes concernées doivent être préservés en même temps.</p>
+    
+    <div class="highlight-box">
+        <p>Une communication transparente sur l'objectif et l'étendue du traitement des données ainsi que des mesures techniques telles que la pseudonymisation et les restrictions d'accès sont déterminantes pour la conception conforme au RGPD des systèmes industriels.</p>
+    </div>
+</div>
+
+<div class="page">
+    <h1>Mise en œuvre pratique : Privacy by Design</h1>
+    
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Analyse des risques</h3>
+            <p>Réalisation d'une analyse d'impact sur la protection des données (AIPD) pour les processus industriels avec traitement de données à caractère personnel</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Minimisation des données</h3>
+            <p>Conception de systèmes Industrie 4.0 avec collecte minimale de données à caractère personnel (p. ex. analyses de productivité anonymisées)</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Mesures techniques</h3>
+            <p>Implémentation de chiffrement, pseudonymisation et confidentialité différentielle dans les flux de données industriels</p>
+        </div>
+        
+        <div class="timeline-item">
+            <h3>Structures de gouvernance</h3>
+            <p>Établissement de responsabilités claires pour la protection des données dans l'environnement de production avec audits réguliers</p>
+        </div>
+    </div>
+    
+    <p>Privacy by Design signifie intégrer la protection des données dès le départ dans les systèmes industriels, au lieu de l'ajouter après coup. Cela permet d'économiser des coûts à long terme et d'éviter d'éventuels problèmes de conformité. Dans la pratique, cela peut se faire par exemple par l'implémentation de techniques d'anonymisation dans les réseaux de capteurs ou la mise en place de routines de suppression automatiques pour les données de protocole qui ne sont plus nécessaires.</p>
+</div>
+
+<div class="page">
+    <h1>Étude de cas : Usine intelligente avec conformité RGPD</h1>
+    
+    <div class="case-study">
+        <div class="table">
+            <div class="table-row">
+                <div class="table-label">Scénario</div>
+                <div>Suivi des employés pour l'optimisation des processus</div>
+            </div>
+            <div class="table-row">
+                <div class="table-label">Risque de protection des données</div>
+                <div>Profils de mouvement détaillés et données de performance des employés</div>
+            </div>
+            <div class="table-row">
+                <div class="table-label">Solution technique</div>
+                <div>Anonymisation en temps réel, évaluation agrégée sans référence personnelle</div>
+            </div>
+            <div class="table-row">
+                <div class="table-label">Mesures organisationnelles</div>
+                <div>Accord d'entreprise, formation, transparence de l'information</div>
+            </div>
+
+        </body>
+        </html>
